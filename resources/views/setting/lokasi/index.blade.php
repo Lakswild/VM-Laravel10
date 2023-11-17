@@ -18,6 +18,7 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>Kode</th>
                                     <th>Lokasi</th>
                                     <th>Action</th>
                                 </tr>
@@ -25,7 +26,8 @@
                             <tbody>
                                 <tr class="odd gradeX">
                                     <td>1</td>
-                                    <td>Lokasi</td>
+                                    <td>Z010</td>
+                                    <td>Foreign Vendor</td>
                                     <td class="center">
                                         <a href="{{ route('lokasi.edit') }}"class="btn btn-xs btn-warning">Edit</a>
                                         <button type="submit" class="btn btn-xs btn-danger">Delete</button>
@@ -33,7 +35,8 @@
                                 </tr>
                                 <tr class="even gradeC">
                                     <td>2</td>
-                                    <td>Nama</td>
+                                    <td>Z020</td>
+                                    <td>Domestic Vendor-Jakarta</td>
                                     <td class="center">
                                         <button type="submit" class="btn btn-xs btn-warning">Edit</button>
                                         <button type="submit" class="btn btn-xs btn-danger">Delete</button>
@@ -41,7 +44,8 @@
                                 </tr>
                                 <tr class="even gradeC">
                                     <td>3</td>
-                                    <td>Email</td>
+                                    <td>Z120</td>
+                                    <td>Domestic Vendor-Lampung</td>
                                     <td class="center">
                                         <button type="submit" class="btn btn-xs btn-warning">Edit</button>
                                         <button type="submit" class="btn btn-xs btn-danger">Delete</button>
@@ -49,7 +53,8 @@
                                 </tr>
                                 <tr class="even gradeC">
                                     <td>4</td>
-                                    <td>Index</td>
+                                    <td>Z900</td>
+                                    <td>One Time Vendor</td>
                                     <td class="center">
                                         <button type="submit" class="btn btn-xs btn-warning">Edit</button>
                                         <button type="submit" class="btn btn-xs btn-danger">Delete</button>
