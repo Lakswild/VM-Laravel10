@@ -18,5 +18,27 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        public function run()
+        {
+    
+            Role::create([
+                'role_name' => 'superadmin',
+            ]);
+    
+            Role::create([
+                'role_name' => 'purchasing',
+            ]);
+            Role::create([
+                'role_name' => 'masterdata',
+            ]);
+            Role::create([
+                'role_name' => 'aprv1',
+            ]);
+            Role::create([
+                'role_name' => 'aprv2',
+            ]);
+            
+            User::factory(5)->create();
+        }
     }
 }

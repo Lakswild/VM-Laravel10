@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('dashboard');
 
     // kalo mau ke login ganti ke auth/login
 });
@@ -59,3 +59,4 @@ Route::get('/lokasi/add', [\App\Http\Controllers\Setting\LokasiController::class
 Route::get('/lokasi/edit', [\App\Http\Controllers\Setting\LokasiController::class, 'edit'])->name('lokasi.edit');
 
 Route::get('/auth', [\App\Http\Controllers\Auth\LoginController::class, 'index'])->name('auth.login');
+Route::get(' ', [\App\Http\Controllers\LoginController::class, 'index'])->name('dashboard');
