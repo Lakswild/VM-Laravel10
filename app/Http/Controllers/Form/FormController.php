@@ -11,5 +11,9 @@ class FormController extends Controller
     {
         return view('form.index');
     }
+    public function edit()
+    {
+        return view('form.edit');
+    }
 
 }

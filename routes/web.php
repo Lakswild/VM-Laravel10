@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('auth/login');
 
     // kalo mau ke login ganti ke auth/login
 });
@@ -49,6 +49,7 @@ Route::get('/tipeinput/add', [\App\Http\Controllers\Master\TipeinputController::
 Route::get('/tipeinput/edit', [\App\Http\Controllers\Master\TipeinputController::class, 'edit'])->name('tipeinput.edit');
 
 Route::get('/form', [\App\Http\Controllers\Form\FormController::class, 'index'])->name('form.index');
+Route::get('/form/edit', [\App\Http\Controllers\Form\FormController::class, 'edit'])->name('form.edit');
 
 Route::get('/per', [\App\Http\Controllers\Setting\PerController::class, 'index'])->name('per.index');
 Route::get('/per/add', [\App\Http\Controllers\Setting\PerController::class, 'add'])->name('per.add');
@@ -59,4 +60,11 @@ Route::get('/lokasi/add', [\App\Http\Controllers\Setting\LokasiController::class
 Route::get('/lokasi/edit', [\App\Http\Controllers\Setting\LokasiController::class, 'edit'])->name('lokasi.edit');
 
 Route::get('/auth', [\App\Http\Controllers\Auth\LoginController::class, 'index'])->name('auth.login');
-Route::get(' ', [\App\Http\Controllers\LoginController::class, 'index'])->name('dashboard');
+// Route::get('/dashboard', [\App\Http\Controllers\LoginController::class, 'index'])->name('dashboard');
+Route::get('/login', function(){
+    return view('auth.login');
+  });
+
+  Route::get('/dashboard', function () {
+    return view('dashboard');
+});
