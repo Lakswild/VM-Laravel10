@@ -33,12 +33,37 @@
                                 </tr>
                                 <tr class="even gradeC">
                                     <td>2</td>
-                                    <td>Approval</td>
+                                    <td>Master Data</td>
                                     <td class="center">
                                         <button type="submit" class="btn btn-xs btn-warning">Edit</button>
                                         <button type="submit" class="btn btn-xs btn-danger">Delete</button>
                                     </td>
                                 </tr>
+                                <tr class="even gradeC">
+                                    <td>3</td>
+                                    <td>Approval1</td>
+                                    <td class="center">
+                                        <button type="submit" class="btn btn-xs btn-warning">Edit</button>
+                                        <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr class="even gradeC">
+                                    <td>4</td>
+                                    <td>Approval2</td>
+                                    <td class="center">
+                                        <button type="submit" class="btn btn-xs btn-warning">Edit</button>
+                                        <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr class="even gradeC">
+                                    <td>5</td>
+                                    <td>Administrator</td>
+                                    <td class="center">
+                                        <button type="submit" class="btn btn-xs btn-warning">Edit</button>
+                                        <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+
                             </tbody>
                         </table>
                     </div>
