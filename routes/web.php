@@ -13,8 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
+// Route::get('/', function () {
+//     return view('auth/login');
+
+//     // kalo mau ke login ganti ke auth/login
+// });
+
+Route::get('/auth/login', [\App\Http\Controllers\Auth\LoginController::class, 'index'])->name('auth.login');
+Route::get('/auth/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('auth.logout');
+Route::post('/auth/login', [\App\Http\Controllers\Auth\LoginController::class, 'login'])->name('act.auth.login');
+
+Route::prefix('app')->middleware(['authentication'])->group(function () {
+    Route::get('/dashboard', [\App\Http\Controllers\User\LevelController::class, 'index'])->name('app.dashboard');
 });
 
 

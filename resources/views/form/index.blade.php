@@ -30,7 +30,7 @@
                                     <td>Z010</td>
                                     <td>CV Kita</td>
                                     <td class="center">
-                                        <a href="{{ route('jenis.edit') }}"class="btn btn-xs btn-warning">Edit</a>
+                                        <a href="{{ route('form.edit') }}"class="btn btn-xs btn-warning">Edit</a>
                                         <button type="submit" class="btn btn-xs btn-danger">Delete</button>
                                         <button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal2">Lampiran</button>
                                     </td>

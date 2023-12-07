@@ -12,57 +12,37 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class User
+ * Class Akun
  * 
  * @property int $id
- * @property string $no
- * @property string $nama
- * @property string $email
- * @property string $password
- * @property string $aktif
- * @property string $su
- * @property int $level_id
  * @property int $perusahaan_id
+ * @property string $kode
+ * @property string $deskripsi
  * @property Carbon $created_at
  * @property Carbon|null $updated_at
  * @property string|null $deleted_at
  * 
- * @property Level $level
  * @property Perusahaan $perusahaan
  * @property Collection|Form[] $forms
  * @property Collection|OnForm[] $on_forms
+ * @property Collection|SkemaVendor[] $skema_vendors
  *
  * @package App\Models
  */
-class User extends Model
+class Akun extends Model
 {
 	use SoftDeletes;
-	protected $table = 'user';
+	protected $table = 'akun';
 
 	protected $casts = [
-		'level_id' => 'int',
 		'perusahaan_id' => 'int'
 	];
 
-	protected $hidden = [
-		'password'
-	];
-
 	protected $fillable = [
-		'no',
-		'nama',
-		'email',
-		'password',
-		'aktif',
-		'su',
-		'level_id',
-		'perusahaan_id'
+		'perusahaan_id',
+		'kode',
+		'deskripsi'
 	];
-
-	public function level()
-	{
-		return $this->belongsTo(Level::class);
-	}
 
 	public function perusahaan()
 	{
@@ -77,5 +57,10 @@ class User extends Model
 	public function on_forms()
 	{
 		return $this->hasMany(OnForm::class);
+	}
+
+	public function skema_vendors()
+	{
+		return $this->hasMany(SkemaVendor::class);
 	}
 }
