@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('password');
             $table->enum('aktif', ['1', '0']);
             $table->enum('su', ['1', '0']);
-            $table->integer('level_id')->index('level_id');
-            $table->integer('perusahaan_id')->index('perusahaan_id');
+            $table->integer('level_id')->index('level_id')->nullable();
+            $table->integer('perusahaan_id')->index('perusahaan_id')->nullable();
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();
             $table->softDeletes();
