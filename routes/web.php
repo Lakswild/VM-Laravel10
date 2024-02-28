@@ -13,18 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('auth/login');
+Route::get('/', function () {
+    return redirect()->route('auth.login');
+});
 
-//     // kalo mau ke login ganti ke auth/login
-// });
+Route::get('/auth/login', [\App\Http\Controllers\Auth\LoginController::class, 'login'])->name('auth.login');
+Route::post('/auth/login', [\App\Http\Controllers\Auth\LoginController::class, 'action'])->name('action.auth.login');
 
-Route::get('/auth/login', [\App\Http\Controllers\Auth\LoginController::class, 'index'])->name('auth.login');
-Route::get('/auth/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('auth.logout');
-Route::post('/auth/login', [\App\Http\Controllers\Auth\LoginController::class, 'login'])->name('act.auth.login');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/auth/logout', [\App\Http\Controllers\Auth\LogoutController::class, 'action'])->name('action.auth.logout');
 
-Route::prefix('app')->middleware(['authentication'])->group(function () {
-    Route::get('/dashboard', [\App\Http\Controllers\User\LevelController::class, 'index'])->name('app.dashboard');
+    Route::prefix('app')->group(function () {
+        Route::get('/dashboard', [\App\Http\Controllers\User\LevelController::class, 'index'])->name('app.dashboard');
+   
+        Route::prefix('outstanding')->group(function () {
+            Route::prefix('request')->group(function () {
+                Route::get('/', [\App\Http\Controllers\Outstanding\RequestController::class, 'index'])->name('app.outstanding.request');
+                Route::get('/form', [\App\Http\Controllers\Outstanding\RequestController::class, 'form'])->name('app.outstanding.request.form');
+            });
+        });
+    });
 });
 
 
