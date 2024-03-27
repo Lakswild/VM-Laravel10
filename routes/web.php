@@ -30,6 +30,7 @@ Route::middleware(['auth'])->group(function () {
             Route::prefix('request')->group(function () {
                 Route::get('/', [\App\Http\Controllers\Outstanding\RequestController::class, 'index'])->name('app.outstanding.request');
                 Route::get('/form', [\App\Http\Controllers\Outstanding\RequestController::class, 'form'])->name('app.outstanding.request.form');
+                Route::get('/form/{id}/detail', [\App\Http\Controllers\Outstanding\DetailController::class, 'view'])->name('app.outstanding.request.form.detail');
             });
         });
     });

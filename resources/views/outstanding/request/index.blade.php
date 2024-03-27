@@ -29,7 +29,8 @@
                     @if (auth()->user()->level == '2')
                         <div class="row">
                             <div class="col-md-12">
-                                <a href="{{ route('app.outstanding.request.form') }}" class="btn btn-primary btn-sm">Create Request</a>
+                                <a href="{{ route('app.outstanding.request.form') }}"
+                                    class="btn btn-primary btn-sm">Create Request</a>
                             </div>
                         </div>
                         <hr>
@@ -91,10 +92,19 @@
                             data: 'action',
                             name: 'action',
                             orderable: false,
-                            searchable: false
+                            searchable: false,
+                            render: function(data, type, full, meta) {
+                                return '<button class="btn btn-primary detail-btn" data-id="">Detail</button>';
+                            }
                         },
                     ]
                 });
+            });
+
+            $('.data-table-outstanding-request').on('click', '.detail-btn', function() {
+                // var data = table.row($(this).closest('tr')).data();
+                // console.log('Detail button clicked for row with data:', data);
+                window.location.href = '{{ route("app.outstanding.request.form.detail", "1") }}';
             });
         </script>
     @endpush
