@@ -25,10 +25,14 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <i class="fa fa-bar-chart-o fa-fw"></i> Room Chat
-
-                    
                 </div>
                 <div class="panel-body">
+                               
+                <ul class="chat"></ul>
+                            </div>
+                            <div class="panel-footer">
+                                Send
+                            </div>
                 </div>
             </div>
         </div>
