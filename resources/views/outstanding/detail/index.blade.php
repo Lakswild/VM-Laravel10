@@ -10,6 +10,10 @@
                 <div class="panel-heading">
                     <i class="fa fa-bar-chart-o fa-fw"></i> Detail Outstanding
                     <div class="pull-right">
+                         <div class="form-group">
+                                                <label>Pakta Integritas</label>
+                                                <input type="file">
+                                            </div>
                         <a href="{{ route('app.outstanding.request') }}" class="btn btn-default btn-xs">Back</a>
                     </div>
                 </div>
@@ -21,6 +25,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <i class="fa fa-bar-chart-o fa-fw"></i> Room Chat
+
+                    
                 </div>
                 <div class="panel-body">
                 </div>
