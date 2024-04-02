@@ -6,32 +6,75 @@
     </div>
     <div class="row">
         <div class="col-lg-6">
-            <div class="panel panel-default">
+            <div class="panel panel-green">
                 <div class="panel-heading">
-                    <i class="fa fa-bar-chart-o fa-fw"></i> Detail Outstanding
+                    <i class="fa fa-database fa-fw"></i> Detail Outstanding
                     <div class="pull-right">
-                         <div class="form-group">
-                                                <label>Pakta Integritas</label>
-                                                <input type="file">
-                                            </div>
                         <a href="{{ route('app.outstanding.request') }}" class="btn btn-default btn-xs">Back</a>
                     </div>
                 </div>
+                <div class="modal-body">
+                <b><i class="left"> Detail Dokumen Pendukung</i></b>
+                </div>
                 <div class="panel-body">
                 </div>
-            </div>
+                <div class="modal-body">
+                <div class="form-group">
+                     <label>File Akta</label>
+                       <input type="file">
+                </div>
+                <div class="form-group">
+                     <label>File Pakta Integritas</label>
+                       <input type="file">
+                </div>
+                <div class="form-group">
+                     <label>File FPKP</label>
+                       <input type="file">
+                </div>
+                <div class="form-group">
+                     <label>File Company Profile</label>
+                       <input type="file">
+                </div>
+                <div class="form-group">
+                     <label>File Rekening Bank</label>
+                       <input type="file">
+                </div>
+                <div class="form-group">
+                     <label>File Pernyataan tidak Terafiliasi</label>
+                       <input type="file">
+                </div>
+                <div class="form-group">
+                     <label>File SPPKP</label>
+                       <input type="file">
+                </div>
+                <div class="form-group">
+                     <label>File NPWP</label>
+                       <input type="file">
+                </div>
+                <div class="form-group">
+                     <label>File KTP</label>
+                       <input type="file">
+                </div>
+                <div class="form-group">
+                     <label>File NIB</label>
+                       <input type="file">
+                </div>
+                </div>
+                </div>
         </div>
         <div class="col-lg-6">
-            <div class="panel panel-default">
+            <div class="panel panel-yellow">
                 <div class="panel-heading">
-                    <i class="fa fa-bar-chart-o fa-fw"></i> Room Chat
+                    <i class="fa fa-comment fa-fw"></i> Room Chat
                 </div>
                 <div class="panel-body">
                                
                 <ul class="chat"></ul>
                             </div>
                             <div class="panel-footer">
-                                Send
+                                <input type="text" class="form-control input-sm" placeholder="type your input..." disable>
+                                <button type="submit" class="btn btn-warning btn-sm" disabled>
+                                Send</button>
                             </div>
                 </div>
             </div>
