@@ -20,32 +20,57 @@
                     <table class="table table-sm table-hover">
                         <tbody>
                             <tr class="odd gradeX">
-                                <td>No Ticket</td>
+                                <td>Nama Vendor</td>
+                                <td>:</td>
+                                <td>PT. JeanNL</td>
+                            </tr>
+                            <tr class="odd gradeX">
+                                <td>NPWP</td>
+                                <td>:</td>
+                                <td>1234567892345678</td>
+                            </tr>
+                            <tr class="odd gradeX">
+                                <td>Email</td>
                                 <td>:</td>
                                 <td>Win 95+</td>
                             </tr>
                             <tr class="odd gradeX">
-                                <td>No Ticket</td>
+                                <td>Negara</td>
                                 <td>:</td>
                                 <td>Win 95+</td>
                             </tr>
                             <tr class="odd gradeX">
-                                <td>No Ticket</td>
+                                <td>Kota</td>
                                 <td>:</td>
                                 <td>Win 95+</td>
                             </tr>
                             <tr class="odd gradeX">
-                                <td>No Ticket</td>
+                                <td>Alamat</td>
                                 <td>:</td>
                                 <td>Win 95+</td>
                             </tr>
                             <tr class="odd gradeX">
-                                <td>No Ticket</td>
+                                <td>TOP</td>
                                 <td>:</td>
                                 <td>Win 95+</td>
                             </tr>
                             <tr class="odd gradeX">
-                                <td>No Ticket</td>
+                                <td>Payment Method</td>
+                                <td>:</td>
+                                <td>Win 95+</td>
+                            </tr>
+                            <tr class="odd gradeX">
+                                <td>Finance</td>
+                                <td>:</td>
+                                <td>Win 95+</td>
+                            </tr>
+                            <tr class="odd gradeX">
+                                <td>Mata Uang</td>
+                                <td>:</td>
+                                <td>Win 95+</td>
+                            </tr>
+                            <tr class="odd gradeX">
+                                <td>Schema Group</td>
                                 <td>:</td>
                                 <td>Win 95+</td>
                             </tr>

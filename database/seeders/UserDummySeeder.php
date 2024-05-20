@@ -34,6 +34,15 @@ class UserDummySeeder extends Seeder
                 'company_id' => 1
             ],
             [
+                'id' => 6,
+                'no' => '6',
+                'name' => 'Purchasingnsa',
+                'email' => 'purchasing2@mail.com',
+                'password' => password_hash('password', PASSWORD_BCRYPT),
+                'level' => 2,
+                'company_id' => 2
+            ],
+            [
                 'id' => 3,
                 'no' => '3',
                 'name' => 'Master data',
