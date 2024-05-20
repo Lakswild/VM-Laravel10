@@ -24,7 +24,8 @@ class RequestController extends Controller
                 DB::raw("CONCAT(company.code,' | ',company.name) as code_name"),
                 'users.name as created_name',
                 'form.status as request_status',
-                'form.step_approval as approval_status'
+                'form.step_approval as approval_status',
+                DB::raw("CONCAT(company.name, '-', form.id) as form_ticket"),
             )
                 ->join('users', 'users.id', '=', 'form.created_by')
                 ->join('company', 'company.id', '=', 'form.company_id')

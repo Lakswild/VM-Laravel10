@@ -39,6 +39,7 @@
                         <table class="table table-bordered data-table-outstanding-request">
                             <thead>
                                 <tr>
+                                    <th>No Ticket</th>
                                     <th>Code & Name Company</th>
                                     <th>Description</th>
                                     <th>Applicant</th>
@@ -65,6 +66,10 @@
                     serverSide: true,
                     ajax: "{{ route('app.outstanding.request') }}",
                     columns: [{
+                            data: 'form_ticket',
+                            name: 'form_ticket'
+                        },
+                        {
                             data: 'code_name',
                             name: 'code_name'
                         },
@@ -94,17 +99,17 @@
                             orderable: false,
                             searchable: false,
                             render: function(data, type, full, meta) {
-                                return '<button class="btn btn-primary detail-btn" data-id="">Detail</button>';
+                                return '<button class="btn btn-primary detail-btn" data-id="' + full
+                                    .id + '">Detail</button>';
                             }
                         },
                     ]
                 });
             });
 
-            $('.data-table-outstanding-request').on('click', '.detail-btn', function() {
-                // var data = table.row($(this).closest('tr')).data();
-                // console.log('Detail button clicked for row with data:', data);
-                window.location.href = '{{ route("app.outstanding.request.form.detail", "1") }}';
+            $('.data-table-outstanding-request').on('click', '.detail-btn', function(e) {
+                var url = "{{ url('app/outstanding/request/form') }}/" + $(this).data('id') + "/detail";
+                window.location.href = url;
             });
         </script>
     @endpush
