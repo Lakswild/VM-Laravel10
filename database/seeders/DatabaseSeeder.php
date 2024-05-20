@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,13 +20,17 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        User::create([
-            'no' => '1',
-            'nama' => 'Admin',
-            'email' => 'admin@mail.com',
-            'password' => password_hash('password', PASSWORD_BCRYPT),
-            'aktif' => 1,
-            'su' => 1,
-        ]);
+        $this->call(FinanceSeeder::class);
+        $this->call(CurrencySeeder::class);
+        $this->call(SchemaGroupSeeder::class);
+        $this->call(TermOfPaymentSeeder::class);
+        $this->call(PaymentMethodSeeder::class);
+
+        $this->call(CountrySeeder::class);
+        $this->call(RegionSeeder::class);
+        $this->call(TypeSeeder::class);
+        $this->call(AccountGroupSeeder::class);
+        $this->call(CompanySeeder::class);
+        $this->call(UserDummySeeder::class);
     }
 }

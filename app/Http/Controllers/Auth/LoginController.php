@@ -5,52 +5,28 @@ namespace App\Http\Controllers\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
-    public function index()
+    public function login()
     {
         return view('auth.login');
     }
 
-    public function login(Request $request)
+    public function action(LoginRequest $request)
     {
+        if (Auth::attempt(["email" => $request->email, "password" => $request->password])) {
+            $request->session()->regenerate();
 
-        $ip = $request->ip();
-        $userAgent = $request->header('User-Agent');
+            return redirect()->intended('app/dashboard');
+        };
 
-        $validator = Validator::make($request->all(), [
-            'email' => ['required', 'email', 'exists:user'],
-            'password' => ['required'],
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
-
-        $validated = $validator->validate();
-
-        $user = User::where('email', $validated['email'])->first();
-
-        if (password_verify($validated['password'], $user->password)) {
-
-            Session::put('user', $user, 60 * 24);
-
-            return redirect()->route('app.dashboard');
-        } else {
-            $validator->errors()->add(
-                'password',
-                'The password does not match with email'
-            );
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
-    }
-
-    public function logout(Request $request)
-    {
-        Session::forget('user');
-        return redirect()->route('auth.login');
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
     }
 }
